@@ -53,12 +53,25 @@ def testfunction4():
 
 def testfunction5():
     repeat_s={
-        "male":0
+        "male":0,
         "female":0
     }
     with open('Clothing.csv', 'r') as file:
         csv_file = csv.DictReader(file)
         for row in csv_file:
-            if row["size"]=="S"
+            if row["size"]=="S":
+                if row["gender"]=="male":
+                    repeat_s["male"]+=1
+                else:
+                    repeat_s["male"] += 1
+        return(repeat_s)
 
-testfunction4()
+
+def getResult():
+    return {
+	"task1":testfunction1(),
+	"task2":testfunction2(),
+	"task3":testfunction3(),
+	"task4":testfunction4(),
+	"task5":testfunction5(),
+	}
